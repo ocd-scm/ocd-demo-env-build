@@ -1,0 +1,10 @@
+# ocdEnvVersion: version of ocd-environment-webhook this configuration is compatible with
+ocdEnvVersion: 1.0.0
+# name: the name that helm should use
+name: ocd-builder-realworld
+# chart: the chart to install with 
+chart: ocd-builder
+# chartVersion: the version of the chart to use
+chartVersion: 1.0.0
+# helmValuesFile: the helm values file to run
+helmValuesFile: realworld-builder.yaml
