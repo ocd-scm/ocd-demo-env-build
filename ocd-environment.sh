@@ -36,9 +36,9 @@ find $(dirname $0) -name ocd-environment.yaml | while read YAML; do
     helm repo add ocd-meta https://ocd-scm.github.io/ocd-meta/charts
   fi
   helm upgrade --install \
-     -f ${helmValuesFile} \
+     -f ${folder}/${helmValuesFile} \
      --version ${chartVersion} \
      --namespace realworld \
      ${name} \
-     ${chart}
+     ocd-meta/${chart}
 done
