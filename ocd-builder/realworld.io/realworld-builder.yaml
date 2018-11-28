@@ -22,7 +22,9 @@ application_domain:
 github_webhook_secret:
 # generic_webhook_secret: A secret string used to configure the Generic webhook.
 generic_webhook_secret:
+# insecureSkipTlsVerify: Whether to allow self signed connections (e.g. minishift)
+insecureSkipTlsVerify: true
 # build_env: as a list as would be shown in the final yaml
 build_env: 
-#  - name: APP_KEY
-#    value: 'base64:IigkzEpgQNbASQjHFXXNtxfF1+zHBbpMYAgBxosCisE='
+  - name: HELLO
+    value: "world" 
