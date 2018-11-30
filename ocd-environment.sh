@@ -28,7 +28,7 @@ find $(dirname $0) -name ocd-environment.yaml | while read YAML; do
   echo helmValuesFile=${helmValuesFile}
   # 
   set -x
-  oc project realworld
+  oc project ${PROJECT}
   helm init --client-only
   helm repo list | grep ocd-meta > /dev/null
   if [ "$?" != "0" ]; then
@@ -38,7 +38,7 @@ find $(dirname $0) -name ocd-environment.yaml | while read YAML; do
   helm upgrade --install \
      -f ${folder}/${helmValuesFile} \
      --version ${chartVersion} \
-     --namespace realworld \
+     --namespace ${PROJECT} \
      ${name} \
      ocd-meta/${chart}
 done
