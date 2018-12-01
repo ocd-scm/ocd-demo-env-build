@@ -1,4 +1,3 @@
 .gitsecret/keys/random_seed
 ocd-builder/ocd-builder-credentials/credentials.env
 passphrase
-ocd-private.key
