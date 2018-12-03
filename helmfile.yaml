@@ -1,0 +1,15 @@
+repositories:
+  - name: ocd-meta 
+    url: https://ocd-scm.github.io/ocd-meta/charts
+
+releases:
+  - name: ocd-builder-realworld
+    labels:
+      builder: realworld
+    chart: ocd-meta/ocd-builder
+    # DB host, port, and connection opts for the environment
+    values:
+    - "realworld-builder.yaml"
+    # DB username and password encrypted with helm-secrets(mozilla/sops)
+    #secrets:
+    #- "deploy/environments/{{ env "RAILS_ENV" }}/secrets.yaml"
