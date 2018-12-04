@@ -1,24 +1,30 @@
 repositories:
   - name: ocd-meta 
     url: https://ocd-scm.github.io/ocd-meta/charts
-
 releases:
+  - name: ocd-builder-credentials
+    labels:
+      secret: ocd-builder-credentials
+    chart: ocd-meta/ocd-secret
+    version: ~1.0.0
+    values:
+      - name: ocd-builder-credentials
+      - env_vars: 
+        - key: OPENSHIFT_SERVER
+          value: "{{ requiredEnv "OPENSHIFT_SERVER" }}"
+        - key: OPENSHIFT_USER
+          value: "{{ requiredEnv "OPENSHIFT_USER" }}"
+        - key: OPENSHIFT_PASSWORD
+          value: "{{ requiredEnv "OPENSHIFT_PASSWORD" }}"
   - name: ocd-builder-realworld
     labels:
       builder: realworld
     chart: ocd-meta/ocd-builder
-    version: ~1.0.0
+    version: ~1.0.1
     # DB host, port, and connection opts for the environment
     values:
       - "ocd-builder/realworld.io/realworld-builder.yaml"
-      # build_env: as a list as would be shown in the final yaml
-      - build_env: 
-        - name: HELLO
-          value: "{{ requiredEnv "HELLO" }}" 
-    # DB username and password encrypted with helm-secrets(mozilla/sops)
-    #secrets:
-    #- "deploy/environments/{{ env "RAILS_ENV" }}/secrets.yaml"
     hooks:
     - events: ["prepare"]
-      command: "echo"
-      args: ["@@@@@@@@ some echo @@@@@@@@@"]
+      command: "./import-image.sh"
+

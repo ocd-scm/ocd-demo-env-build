@@ -1,5 +1,4 @@
 #!/bin/bash
-VERSION=1.0.0
 oc() { 
     ./oc_wrapper.sh "$@" 
 }
