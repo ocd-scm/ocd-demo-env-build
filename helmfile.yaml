@@ -20,7 +20,7 @@ releases:
     labels:
       builder: realworld
     chart: ocd-meta/ocd-builder
-    version: ~1.0.1
+    version: ~1.0.0
     # DB host, port, and connection opts for the environment
     values:
       - "ocd-builder/realworld.io/realworld-builder.yaml"
