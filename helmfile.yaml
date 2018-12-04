@@ -7,9 +7,18 @@ releases:
     labels:
       builder: realworld
     chart: ocd-meta/ocd-builder
+    version: ~1.0.0
     # DB host, port, and connection opts for the environment
     values:
-    - "realworld-builder.yaml"
+      - "ocd-builder/realworld.io/realworld-builder.yaml"
+      # build_env: as a list as would be shown in the final yaml
+      - build_env: 
+        - name: HELLO
+          value: "{{ requiredEnv "HELLO" }}" 
     # DB username and password encrypted with helm-secrets(mozilla/sops)
     #secrets:
     #- "deploy/environments/{{ env "RAILS_ENV" }}/secrets.yaml"
+    hooks:
+    - events: ["prepare"]
+      command: "echo"
+      args: ["@@@@@@@@ some echo @@@@@@@@@"]

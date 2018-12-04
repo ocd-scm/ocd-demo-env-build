@@ -24,7 +24,4 @@ github_webhook_secret:
 generic_webhook_secret:
 # insecureSkipTlsVerify: Whether to allow self signed connections (e.g. minishift)
 insecureSkipTlsVerify: true
-# build_env: as a list as would be shown in the final yaml
-build_env: 
-  - name: HELLO
-    value: "world" 
+
