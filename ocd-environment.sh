@@ -9,7 +9,6 @@ find $(dirname $0) -name helmfile.yaml | while read YAML; do
   pushd $folder
   # 
   set -x
-  oc project ${PROJECT}
   helmfile --log-level debug apply
   popd
 done
