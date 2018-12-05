@@ -20,7 +20,7 @@ fi
 # gpg decrypt all the *secret files
 find . -type f -name '*secret' | while read -r SECRET ; do 
     if [ ! -f "${SECRET%.*}" ]; then
-        gpg --output "${SECRET%.*}" --decrypt "${SECRET%.*}.secret" 2>/dev/null
+        echo $PASSPHRASE | gpg --pinentry loopback --import --passphrase-fd 0 --output "${SECRET%.*}" --decrypt "${SECRET%.*}.secret"
         if [ ! -f "${SECRET%.*}" ]; then
             >&2 echo "PANIC! Could not decrypt ${SECRET%.*}.secret. Check 'git secret whoknows' against 'gpg --list-secret-keys'"
             exit 1
