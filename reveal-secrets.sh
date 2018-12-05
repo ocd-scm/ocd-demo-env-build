@@ -22,7 +22,7 @@ find . -type f -name '*secret' | while read -r SECRET ; do
     if [ ! -f "${SECRET%.*}" ]; then
         gpg --output "${SECRET%.*}" --decrypt "${SECRET%.*}.secret" 2>/dev/null
         if [ ! -f "${SECRET%.*}" ]; then
-            echo "PANIC! could not decript ${SECRET%.*}.secret Have you git secret told the hubot user?"
+            >&2 echo "PANIC! Could not decrypt ${SECRET%.*}.secret. Check 'git secret whoknows' against 'gpg --list-secret-keys'"
             exit 1
         fi
     fi
