@@ -26,9 +26,4 @@ releases:
       - "ocd-builder/realworld.io/app_key.yaml"
     hooks:
     - events: ["prepare"]
-      command: "./import-image.sh"
-    - events: ["prepare"]
-      command: "./reveal-secrets.sh"
-    - events: ["cleanup"]
-      command: "./delete-secrets.sh"
-
+      command: "{{ requiredEnv "OCD_SCRIPTS_PATH" }}/ocd-prepare-hook.sh && ./import-image.sh"
