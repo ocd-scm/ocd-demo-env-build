@@ -27,4 +27,4 @@ releases:
     hooks:
     - events: ["prepare"]
       command: "/bin/sh"
-      args: ["-c", "'{{ requiredEnv "OCD_SCRIPTS_PATH" }}/ocd-prepare-hook.sh && {{ requiredEnv "OCD_CHECKOUT_PATH" }}/import-image.sh'"]
+      args: ["-c", "{{ requiredEnv "OCD_SCRIPTS_PATH" }}/ocd-prepare-hook.sh && {{ requiredEnv "OCD_CHECKOUT_PATH" }}/import-image.sh"]
