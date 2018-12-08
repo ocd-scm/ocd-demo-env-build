@@ -31,7 +31,7 @@ releases:
   - name: ocd-builder-webhook-realworld
     labels:
       ocd-builder-webhook: realworld
-    chart: ocd-meta/ocd-builder-webook
+    chart: ocd-meta/ocd-builder-webhook
     version: ~1.0.0
     values:
       - name: ocd-builder-webhook-realworld
