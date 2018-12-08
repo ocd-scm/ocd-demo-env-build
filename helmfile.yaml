@@ -22,7 +22,6 @@ releases:
     chart: ocd-meta/ocd-builder
     version: ~1.0.0
     values:
-      - source_repository_url: "http://7784f8c5766f9fc074a3d77fb426bc3058abd4a5@gitea-ocd-builder.192.168.99.100.nip.io/simbo1905/env-build.git"
       - "ocd-builder/realworld.io/realworld-builder.yaml"
       - "ocd-builder/realworld.io/app_key.yaml"
     hooks:

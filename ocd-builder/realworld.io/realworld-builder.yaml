@@ -11,7 +11,7 @@ s2iimage: nodejs-8-rhel7
 # memory_limit: Maximum amount of memory the container can use.
 memory_limit: 256Mi
 # source_repository_url: The URL of the repository with your application source code.
-source_repository_url: https://github.com/simbo1905/react-redux-realworld-example-app.git
+source_repository_url: http://7784f8c5766f9fc074a3d77fb426bc3058abd4a5@gitea-ocd-builder.192.168.99.100.nip.io/simbo1905/env-build.git
 # source_repository_ref: Set this to a branch name, tag or other ref of your repository if you are not using the default branch.
 source_repository_ref: master
 # context_dir: Set this to the relative path to your project if it is not in the root of your repository.
