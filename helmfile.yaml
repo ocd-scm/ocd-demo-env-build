@@ -33,7 +33,7 @@ releases:
       ocd-builder-webhook: realworld
     chart: ocd-meta/ocd-builder-webook
     version: ~1.0.0
-    value:
+    values:
       - name: ocd-builder-webhook-realworld
       - webhookRepFullname: simbo1905/realworld
       - buildNamespace: ocd-builder
