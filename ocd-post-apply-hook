@@ -11,6 +11,9 @@ oc() {
 # delete the unencrypted secrets
 ${OCD_SCRIPTS_PATH}/ocd-delete-secrets.sh
 
+# tag the generic webhook image as the specific webhook image 
+oc tag ocd-builder-webhook:latest ocd-builder-webhook-realworld:latest
+
 # deploy the webhook
 oc rollout latest dc/ocd-builder-webhook-realworld -n $PROJECT
 
