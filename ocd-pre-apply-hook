@@ -1,0 +1,2 @@
+#!/bin/bash
+${OCD_SCRIPTS_PATH}/ocd-prepare-hook.sh
