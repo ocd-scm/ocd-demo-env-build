@@ -21,13 +21,10 @@ releases:
       builder: realworld
     chart: ocd-meta/ocd-builder
     version: ~1.0.0
+    # note that app_key.yaml is encrypted as app_key.yaml.secret in git
     values:
       - "ocd-builder/realworld.io/realworld-builder.yaml"
       - "ocd-builder/realworld.io/app_key.yaml"
-    hooks:
-    - events: ["prepare"]
-      command: "/bin/sh"
-      args: ["-c", "{{ requiredEnv "OCD_CHECKOUT_PATH" }}/import-image.sh"]
   - name: ocd-builder-webhook-realworld
     labels:
       ocd-builder-webhook: realworld
