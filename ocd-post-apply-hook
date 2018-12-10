@@ -3,13 +3,13 @@
 # debug logging
 set +x
 
+# delete the unencrypted secrets
+${OCD_SCRIPTS_PATH}/ocd-delete-secrets.sh
+
 # this wrapper will detected session timeout and login
 oc() { 
     ${OCD_SCRIPTS_PATH}/oc_wrapper.sh "$@" 
 }
-
-# delete the unencrypted secrets
-${OCD_SCRIPTS_PATH}/ocd-delete-secrets.sh
 
 # tag the generic webhook image as the specific webhook image 
 oc tag ocd-builder-webhook:latest ocd-builder-webhook-realworld:latest

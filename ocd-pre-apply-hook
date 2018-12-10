@@ -1,5 +1,5 @@
 #!/bin/bash
-# run the defaults that will try to gpg decrype any *.secret files it finds
-${OCD_SCRIPTS_PATH}/ocd-prepare-hook.sh
+# run the defaults that will try to gpg decrypt any *.secret files it finds
+${OCD_SCRIPTS_PATH}/ocd-decrypt-secrets.sh
 # import the s2i image for this project which may already exist
-${OCD_CHECKOUT_PATH}/import-image.sh"
+${OCD_CHECKOUT_PATH}/import-image.sh
