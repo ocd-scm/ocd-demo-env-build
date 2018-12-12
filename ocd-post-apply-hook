@@ -11,6 +11,8 @@ oc() {
     ${OCD_SCRIPTS_PATH}/oc_wrapper.sh "$@" 
 }
 
+sleep 1
+
 # tag the generic webhook image as the specific webhook image 
 oc tag ocd-builder-webhook:latest ocd-builder-webhook-realworld:latest
 
@@ -19,4 +21,3 @@ oc rollout latest dc/ocd-builder-webhook-realworld -n $PROJECT
 
 # expose the webhook with a route
 oc expose svc ocd-builder-webhook-realworld
-
