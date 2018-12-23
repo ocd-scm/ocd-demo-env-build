@@ -33,6 +33,6 @@ releases:
     values:
       - name: webhook-realworld-react-redux
       - webhookRepFullname: simbo1905/realworld
-      - buildNamespace: ocd-builder
+      - buildNamespace: {{ .Namespace }}
       - build: realworld-react-redux
       - insecureSkipTlsVerify: true
