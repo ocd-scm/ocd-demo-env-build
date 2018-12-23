@@ -14,10 +14,10 @@ oc() {
 sleep 1
 
 # tag the generic webhook image as the specific webhook image 
-oc tag ocd-builder-webhook:latest ocd-builder-webhook-realworld:latest
+oc tag ocd-builder-webhook:latest webhook-realworld-react-redux:latest
 
 # deploy the webhook
-oc rollout latest dc/ocd-builder-webhook-realworld -n $PROJECT
+oc rollout latest dc/webhook-realworld-react-redux -n $PROJECT
 
 # expose the webhook with a route
-oc expose svc ocd-builder-webhook-realworld
+oc expose svc webhook-realworld-react-redux
