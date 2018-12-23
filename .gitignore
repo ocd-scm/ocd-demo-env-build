@@ -1,4 +1,4 @@
 .gitsecret/keys/random_seed
 ocd-builder/ocd-builder-credentials/credentials.env
 passphrase
-ocd-builder/realworld.io/app_key.yaml
+ocd-builder/realworld-react-redux/app_key.yaml
