@@ -37,3 +37,4 @@ releases:
       - buildNamespace: {{ requiredEnv "PROJECT" }}
       - build: realworld-react-redux
       - insecureSkipTlsVerify: true
+      - webhookSecret: 2lqH2Erp3E
