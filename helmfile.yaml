@@ -8,7 +8,7 @@ releases:
     chart: ocd-meta/ocd-secret
     version: ~1.0.0
     values:
-      - name: realworld-react-redux-credentials
+      - name: ocd-builder-credentials
       - env_vars: 
         - key: OPENSHIFT_SERVER
           value: "{{ requiredEnv "OPENSHIFT_SERVER" }}"
