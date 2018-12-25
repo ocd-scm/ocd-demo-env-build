@@ -23,8 +23,8 @@ releases:
     version: ~1.0.0
     # note that app_key.yaml is encrypted as app_key.yaml.secret in git
     values:
-      - "ocd-builder/realworld-react-redux/realworld-builder.yaml"
-      - "ocd-builder/realworld-react-redux/app_key.yaml"
+      - "realworld-builder.yaml"
+      - "app_key.yaml"
       - source_repository_url: http://ffdbaa5f8689920e9389ad321760a65f0ead6d91@gitea-gitea.192.168.99.100.nip.io/simbo1905/realworld.git
   - name: realworld-react-redux-webhook
     labels:

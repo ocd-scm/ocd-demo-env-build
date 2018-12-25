@@ -2,3 +2,4 @@
 ocd-builder/ocd-builder-credentials/credentials.env
 passphrase
 ocd-builder/realworld-react-redux/app_key.yaml
+realworld-react-redux/app_key.yaml
