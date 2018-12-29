@@ -25,7 +25,7 @@ releases:
     values:
       - "realworld-builder.yaml"
       - "app_key.yaml"
-      - source_repository_url: http://ffdbaa5f8689920e9389ad321760a65f0ead6d91@gitea-gitea.192.168.99.100.nip.io/simbo1905/realworld.git
+      - source_repository_url: http://c9b58970a1ea91c9b93f78b400a52b3db7db33b0@gitea-gitea.192.168.99.101.nip.io/simbo1905/realworld.git
   - name: realworld-react-redux-webhook
     labels:
       ocd-builder-webhook: realworld-react-redux
