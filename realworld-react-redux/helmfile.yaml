@@ -33,7 +33,7 @@ releases:
     version: ~1.0.0
     values:
       - name: webhook-realworld-react-redux
-      - webhookRepFullname: simbo1905/realworld
+      - webhookRepFullname: simbo1905/realworld-react-redux
       - buildNamespace: {{ requiredEnv "PROJECT" }}
       - build: realworld-react-redux
       - insecureSkipTlsVerify: true
