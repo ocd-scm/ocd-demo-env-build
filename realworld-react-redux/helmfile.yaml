@@ -2,7 +2,7 @@ repositories:
   - name: ocd-meta 
     url: https://ocd-scm.github.io/ocd-meta/charts
 releases:
-  - name:  {{ requiredEnv "ENV_PREFIX" }}-realworld-react-redux
+  - name:  {{ requiredEnv "ENV_PREFIX" }}-realworld
     labels:
       builder: realworld-react-redux
     chart: ocd-meta/ocd-builder
@@ -12,7 +12,7 @@ releases:
       - "realworld-builder.yaml"
       - "app_key.yaml"
       - source_repository_url: {{ requiredEnv "OCD_GIT_REPO" }}
-  - name: {{ requiredEnv "ENV_PREFIX" }}-realworld-react-redux-webhook
+  - name: {{ requiredEnv "ENV_PREFIX" }}-realworld-webhook
     labels:
       ocd-builder-webhook: realworld-react-redux
     chart: ocd-meta/ocd-builder-webhook
