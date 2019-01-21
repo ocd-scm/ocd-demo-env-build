@@ -11,12 +11,12 @@ oc() {
     ${OCD_SCRIPTS_PATH}/oc_wrapper.sh "$@" 
 }
 
-sleep 1
+# sleep 1
 
-# tag the generic webhook image as the specific webhook image 
-oc tag ocd-builder-webhook:latest webhook-realworld-react-redux:latest
+# # tag the generic webhook image as the specific webhook image 
+# oc tag ocd-builder-webhook:latest webhook-realworld-react-redux:latest
 
-# deploy the webhook
-oc rollout latest dc/webhook-realworld-react-redux -n $PROJECT
+# # deploy the webhook
+# oc rollout latest dc/webhook-realworld-react-redux -n $PROJECT
 
 cowsay "All done!"
