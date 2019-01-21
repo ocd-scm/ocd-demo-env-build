@@ -2,23 +2,9 @@ repositories:
   - name: ocd-meta 
     url: https://ocd-scm.github.io/ocd-meta/charts
 releases:
-  - name: ocd-builder-credentials
-    labels:
-      secret: ocd-builder-credentials
-    chart: ocd-meta/ocd-secret
-    version: ~1.0.0
-    values:
-      - name: ocd-builder-credentials
-      - env_vars: 
-        - key: OPENSHIFT_SERVER
-          value: "{{ requiredEnv "OPENSHIFT_SERVER" }}"
-        - key: OPENSHIFT_USER
-          value: "{{ requiredEnv "OPENSHIFT_USER" }}"
-        - key: OPENSHIFT_PASSWORD
-          value: "{{ requiredEnv "OPENSHIFT_PASSWORD" }}"
   - name: realworld-react-redux
     labels:
-      builder: realworld-react-redux-builder
+      builder: realworld-react-redux
     chart: ocd-meta/ocd-builder
     version: ~1.0.0
     # note that app_key.yaml is encrypted as app_key.yaml.secret in git
@@ -38,3 +24,6 @@ releases:
       - build: realworld-react-redux
       - insecureSkipTlsVerify: true
       - webhookSecret: 2lqH2Erp3E
+      - deploy_env: 
+        - name: OPENSHIFT_SERVER
+          value: "{{ requiredEnv "OPENSHIFT_SERVER" }}"
