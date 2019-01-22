@@ -4,7 +4,7 @@ repositories:
 releases:
   - name:  {{ requiredEnv "ENV_PREFIX" }}-realworld
     labels:
-      builder: realworld-react-redux
+      builder: realworld
     chart: ocd-meta/ocd-builder
     version: ~1.0.0
     # note that app_key.yaml is encrypted as app_key.yaml.secret in git
@@ -14,14 +14,14 @@ releases:
       - source_repository_url: {{ requiredEnv "OCD_GIT_REPO" }}
   - name: {{ requiredEnv "ENV_PREFIX" }}-realworld-webhook
     labels:
-      ocd-builder-webhook: realworld-react-redux
+      ocd-builder-webhook: realworld
     chart: ocd-meta/ocd-builder-webhook
     version: ~1.0.0
     values:
-      - name: webhook-realworld-react-redux
+      - name: webhook-realworld
       - webhookRepFullname: simbo1905/realworld-react-redux
       - buildNamespace: {{ requiredEnv "PROJECT" }}
-      - build: realworld-react-redux
+      - build: realworld
       - insecureSkipTlsVerify: true
       - webhookSecret: 2lqH2Erp3E
       - deploy_env: 
