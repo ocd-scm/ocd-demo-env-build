@@ -9,7 +9,7 @@ s2iimage: nodejs-8-rhel7
 # ocsecretTagger: The secret with the openshift credentials to tag images.
 #ocsecretTagger: ocd-builder-credentials
 # memory_limit: Maximum amount of memory the container can use.
-memory_limit: 256Mi
+memory_limit: 1024Mi
 # source_repository_ref: Set this to a branch name, tag or other ref of your repository if you are not using the default branch.
 source_repository_ref: master
 # context_dir: Set this to the relative path to your project if it is not in the root of your repository.
