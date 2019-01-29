@@ -13,6 +13,7 @@ releases:
       - "app_key.yaml"
       - source_repository_url: {{ requiredEnv "OCD_GIT_REPO" }}
       - openshiftServer: "{{ requiredEnv "OPENSHIFT_SERVER" }}"
+      - project: {{ requiredEnv "PROJECT" }}
   - name: {{ requiredEnv "ENV_PREFIX" }}-realworld-webhook
     labels:
       ocd-builder-webhook: realworld
