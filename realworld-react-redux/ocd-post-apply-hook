@@ -4,6 +4,34 @@
 set +x
 
 # delete the unencrypted secrets
-${OCD_SCRIPTS_PATH}/ocd-delete-secrets.sh
+"${OCD_SCRIPTS_PATH}/ocd-delete-secrets.sh"
+
+SECRET_NAME=$(
+    oc describe sa sa-tag-realworld |
+    awk -F': *' '
+        $2  { KEY=$1 ; VALUE=$2;  }
+        !$2 {          VALUE=$1; }
+        KEY=="Mountable secrets" && VALUE !~ /docker/ { gsub(/^[ \t]+/, "", VALUE);print VALUE }
+    '
+)
+echo "SECRET_NAME=$SECRET_NAME"
+oc patch -n "$PROJECT bc/tag-realworld" -p "$(
+cat <<EOF
+{
+    "spec": {
+        "source": {
+            "secrets": [
+                {
+                    "secret": {
+                        "name": "$SECRET_NAME"
+                    },
+                    "destinationDir": "/sa-secret-volume"
+                }
+            ]
+        }
+    }
+}
+EOF
+)"
 
 cowsay "All done!"
