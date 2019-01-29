@@ -15,7 +15,7 @@ SECRET_NAME=$(
     '
 )
 echo "SECRET_NAME=$SECRET_NAME"
-oc patch -n "$PROJECT bc/tag-realworld" -p "$(
+oc patch -n "$PROJECT" bc/tag-realworld -p "$(
 cat <<EOF
 {
     "spec": {
