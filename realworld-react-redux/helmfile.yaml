@@ -6,7 +6,7 @@ releases:
     labels:
       builder: realworld
     chart: ocd-meta/ocd-builder
-    version: ~1.0.0
+    version: "1.0.0-M1"
     # note that app_key.yaml is encrypted as app_key.yaml.secret in git
     values:
       - "realworld-builder.yaml"
@@ -18,7 +18,7 @@ releases:
     labels:
       ocd-builder-webhook: realworld
     chart: ocd-meta/ocd-builder-webhook
-    version: ~1.0.0
+    version: "1.0.0-M1"
     values:
       - name: webhook-realworld
       - webhookRepFullname: simbo1905/realworld-react-redux
